@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Environment Info";
+}
+
+<div>
+    <br />
+    <img src="~/images/Tuga-It-2016-site-logo.png" alt="Tuga IT Logo" class="img-responsive" />
+    <br />
+
+    <b>Cloud Environment</b>
+    <p> WebSite Host Name : @Environment.GetEnvironmentVariable("WEBSITE_HOSTNAME")</p>
+    <p> WebSite Name      : @Environment.GetEnvironmentVariable("WEBSITE_SITE_NAME")</p>
+    <p> Region            : @Environment.GetEnvironmentVariable("REGION_NAME")</p>
+    <p> Pricing Tier      : @Environment.GetEnvironmentVariable("WEBSITE_SKU")</p>
+    <br />
+
+    <b>OS Windows System Environment</b>
+    <p>Operation System : @System.Environment.GetEnvironmentVariable("OS")</p>
+    <p>Computer Name    : @System.Environment.GetEnvironmentVariable("COMPUTERNAME")</p>
+    <p>System Drive     : @Environment.GetEnvironmentVariable("SystemDrive")</p>
+    <p>System Root      : @Environment.GetEnvironmentVariable("SystemRoot")</p>
+    <p>@Environment.GetEnvironmentVariable("SERVER_SOFTWARE")</p>
+    <br />
+
+    <b>OS Linux System Environment</b>
+    <p>Hostname       : @Environment.GetEnvironmentVariable("HOSTNAME")</p>
+    <p>Host Type      : @Environment.GetEnvironmentVariable("HOSTTYPE"), @Environment.GetEnvironmentVariable("MACHTYPE")</p>
+    <p>Language       : @Environment.GetEnvironmentVariable("LANG"), @Environment.GetEnvironmentVariable("LANGUAGE")</p>
+    <p>Home directory : @Environment.GetEnvironmentVariable("HOME")</p>
+    <p>Bash Version   : @Environment.GetEnvironmentVariable("BASH_VERSION")</p>
+    <p>@Environment.GetEnvironmentVariable("SSH_CLIENT"), @Environment.GetEnvironmentVariable("SSH_TTY"), @Environment.GetEnvironmentVariable("USER"), @Environment.GetEnvironmentVariable("LOGNAME")</p>
+    <br />
+
+
+    <b>App Environment</b>
+    <p>Name    : @Microsoft.Extensions.PlatformAbstractions.PlatformServices.Default.Application.ApplicationName</p>
+    <p>Version : @Microsoft.Extensions.PlatformAbstractions.PlatformServices.Default.Application.ApplicationVersion</p>
+    <p>Version : @Microsoft.Extensions.PlatformAbstractions.PlatformServices.Default.Application.ApplicationBasePath</p>
+    <p>Framework : @Microsoft.Extensions.PlatformAbstractions.PlatformServices.Default.Application.RuntimeFramework</p>
+    <br />
+
+
+    <b>.Net Core </b>
+    <p>Version     : @Environment.GetEnvironmentVariable("DOTNET_VERSION")</p>
+    <p>Download    : @Environment.GetEnvironmentVariable("DOTNET_DOWNLOAD_URL")</p>
+    <p>Environment : @Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")</p>
+    <p>ASP URL     : @Environment.GetEnvironmentVariable("ASPNETCORE_URLS")</p>
+    <br />
+
+
+</div>
+
+
+
